@@ -5,8 +5,13 @@ Sales Operations & MIS professional and builder of business automation systems.
 
 - `index.html` — the whole site (Tailwind CDN + Lucide icons, light/dark theme,
   scroll-reveal, responsive nav). No build step.
-- `mehedi-hasan-sajal.jpeg` — professional headshot (hero + About section).
+- `mehedi-hasan-sajal.jpeg` — professional headshot (hero).
 - `Mehedi-Hasan-Sajal-CV.pdf` — downloadable CV used by the "Download CV" buttons.
+- `Mehedi-Hasan-Sajal-Portfolio.html` — **single-file shareable build**: the photo and the CV are
+  embedded as base64 data URIs, so this ONE file can be sent via WhatsApp / email and shows the
+  photo + downloads the CV with no companion files. It only needs internet for the Tailwind /
+  Lucide / Google-Fonts CDNs. Regenerate after editing `index.html` by re-running the embed step
+  (base64-inline `src="mehedi-hasan-sajal.jpeg"` and both `href="Mehedi-Hasan-Sajal-CV.pdf"`).
 
 ## Featured projects
 
