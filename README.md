@@ -5,6 +5,7 @@ Sales Operations & MIS professional and builder of business automation systems.
 
 - `index.html` — the whole site (Tailwind CDN + Lucide icons, light/dark theme,
   scroll-reveal, responsive nav). No build step.
+- `mehedi-hasan-sajal.jpeg` — hero portrait (professional headshot).
 - `Mehedi-Hasan-Sajal-CV.pdf` — downloadable CV used by the "Download CV" buttons.
 
 ## Featured projects
