@@ -7,19 +7,32 @@ Sales Operations & MIS professional and builder of business automation systems.
   scroll-reveal, responsive nav). No build step.
 - `mehedi-hasan-sajal.jpeg` — professional headshot (hero).
 - `Mehedi-Hasan-Sajal-CV.pdf` — downloadable CV used by the "Download CV" buttons.
-- `Mehedi-Hasan-Sajal-Portfolio.html` — **single-file shareable build**: the photo and the CV are
-  embedded as base64 data URIs, so this ONE file can be sent via WhatsApp / email and shows the
-  photo + downloads the CV with no companion files. It only needs internet for the Tailwind /
-  Lucide / Google-Fonts CDNs. Regenerate after editing `index.html` by re-running the embed step
-  (base64-inline `src="mehedi-hasan-sajal.jpeg"` and both `href="Mehedi-Hasan-Sajal-CV.pdf"`).
+- `Mehedi-Hasan-Sajal-Portfolio.html` — **single-file, fully offline shareable build** (~377 KB).
+  Everything is embedded, so it renders with **zero network access**: the Inter font (variable
+  woff2, latin subset, base64 `@font-face`), the Tailwind CSS (generated at build time and inlined),
+  all 41 Lucide icons (baked as inline SVG — the theme toggle uses two SVGs toggled by
+  `block dark:hidden` / `hidden dark:block`, so no JS icon library), plus the photo and the CV as
+  base64 data URIs. Verified with all external requests blocked: 0 network calls, Inter available,
+  photo loads, dark mode toggles, CV downloads as `Mehedi-Hasan-Sajal-CV.pdf`.
+  Send this ONE file via WhatsApp/email; the recipient only needs a browser.
+  ⚠️ Rebuild it after editing `index.html` (see `docs` note / build steps in the repo history):
+  embed the font, bake the icons, inline the generated Tailwind CSS, drop the CDN tags, then
+  base64-inline `src="mehedi-hasan-sajal.jpeg"` and both `href="Mehedi-Hasan-Sajal-CV.pdf"`.
 
 ## Featured projects
 
+All five are **internal / private systems** — the portfolio deliberately shows no public demo
+links (the live apps are behind staff sign-in and the GitHub repos are private, so any link would
+be a dead end for a visitor). It ends with a "Request a walkthrough" CTA instead.
+
 1. Corporate Zakat Management & Assurance Platform — Next.js / Prisma / PostgreSQL
-2. SFUWT Welfare Application Portal — Flask / SQLite → https://sfuwt-welfare.opsh.io/
-3. SFUWT Control Tower & Field Visit Tracker — Node.js / MSSQL → https://sfuwt-dashboard.opsh.io/
+2. SFUWT Welfare Application Portal — Flask / SQLite *(live, staff sign-in required)*
+3. SFUWT Control Tower & Field Visit Tracker — Node.js / MSSQL *(live, staff sign-in required)*
 4. Family Finance — Android (Kotlin / Jetpack Compose / Firebase)
 5. Transport Management System (TMS) — Next.js 16 / Prisma / PostgreSQL
+
+> The only outbound project link that works for a visitor is the GitHub **profile**
+> (`github.com/mehedihasansajal7-ctrl`) — the repo links themselves 404 because they are private.
 
 ## Local preview
 
