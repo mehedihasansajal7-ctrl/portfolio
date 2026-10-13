@@ -1,7 +1,7 @@
 # Mehedi Hasan Sajal — Portfolio
 
 Personal portfolio site (single-file, dependency-free) for **Mehedi Hasan Sajal** —
-Sales Operations &amp; MIS professional and builder of business automation systems.
+Sales Operations & MIS professional and builder of business automation systems.
 
 - `index.html` — the whole site (Tailwind CDN + Lucide icons, light/dark theme,
   scroll-reveal, responsive nav). No build step.
