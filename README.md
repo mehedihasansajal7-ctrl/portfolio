@@ -21,7 +21,7 @@ Sales Operations & MIS professional and builder of business automation systems.
 
 ## Featured projects
 
-All five are **internal / private systems** — the portfolio deliberately shows no public demo
+All six are **internal / private systems** — the portfolio deliberately shows no public demo
 links (the live apps are behind staff sign-in and the GitHub repos are private, so any link would
 be a dead end for a visitor). It ends with a "Request a walkthrough" CTA instead.
 
@@ -30,9 +30,40 @@ be a dead end for a visitor). It ends with a "Request a walkthrough" CTA instead
 3. SFUWT Control Tower & Field Visit Tracker — Node.js / MSSQL *(live, staff sign-in required)*
 4. Family Finance — Android (Kotlin / Jetpack Compose / Firebase)
 5. Transport Management System (TMS) — Next.js 16 / Prisma / PostgreSQL
+6. Small Business Manager — with a Farming module — TypeScript npm-workspaces monorepo
+   (`packages/domain` pure logic · Node + `node:sqlite` API · React/Vite PWA · Expo Android ·
+   Supabase/PostgreSQL port); offline-first double-entry accounting + farming costing
 
 > The only outbound project link that works for a visitor is the GitHub **profile**
 > (`github.com/mehedihasansajal7-ctrl`) — the repo links themselves 404 because they are private.
+
+## Rebuilding the offline single-file build
+
+`Mehedi-Hasan-Sajal-Portfolio.html` is a generated artifact. After any edit to `index.html`
+(especially if you add **new Tailwind classes or new icons**) rebuild it:
+
+1. **Embed the font** — fetch `https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap`
+   with a Chrome User-Agent, keep the **`latin`** `@font-face` only (it covers every non-ASCII char
+   used here; `latin-ext` covers none), download its `.woff2` and inline it as
+   `src:url(data:font/woff2;base64,…)` — replacing the three Google-Fonts `<link>` tags.
+2. **Bake the icons** — for every `<i data-lucide="NAME" class="CLASSES"></i>`, fetch
+   `https://unpkg.com/lucide-static@latest/icons/NAME.svg` and replace the tag with an inline
+   `<svg class="CLASSES" …>`. The theme toggle becomes **two** SVGs (moon `block dark:hidden`,
+   sun `hidden dark:block`) and the theme JS loses its `lucide.createIcons()` calls.
+3. **Inline Tailwind** — load the intermediate file in a browser with the Play CDN still present,
+   read the injected `<style>` whose text starts with `*,`, and save it. (This is why a *new*
+   Tailwind class needs a rebuild: the CDN only generates the classes it sees.)
+4. **Finalise** — replace `<script src="https://cdn.tailwindcss.com">` with that CSS inside a
+   `<style>` at the end of `<head>`; delete the Tailwind/lucide `<script>` tags and the
+   `tailwind.config` block (it needs the CDN global); then base64-inline
+   `src="mehedi-hasan-sajal.jpeg"` and both `href="Mehedi-Hasan-Sajal-CV.pdf"`.
+5. **Verify** — the page must report `performance.getEntriesByType('resource')` with **0** external
+   requests, `document.fonts.check('16px Inter') === true`, the photo loading, the dark-mode toggle
+   working and the CV downloading as `Mehedi-Hasan-Sajal-CV.pdf`.
+
+⚠️ Do all file reads/writes in **Python with `encoding="utf-8"`**. PowerShell's `Get-Content` /
+`Out-File` (and `git show | Out-File`) decode bytes with the console code page and will corrupt
+`—`, `·`, `→` into mojibake.
 
 ## Local preview
 
