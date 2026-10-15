@@ -21,7 +21,7 @@ Sales Operations & MIS professional and builder of business automation systems.
 
 ## Featured projects
 
-All six are **internal / private systems** — the portfolio deliberately shows no public demo
+All seven are **internal / private systems** — the portfolio deliberately shows no public demo
 links (the live apps are behind staff sign-in and the GitHub repos are private, so any link would
 be a dead end for a visitor). It ends with a "Request a walkthrough" CTA instead.
 
@@ -33,6 +33,9 @@ be a dead end for a visitor). It ends with a "Request a walkthrough" CTA instead
 6. Small Business Manager — with a Farming module — TypeScript npm-workspaces monorepo
    (`packages/domain` pure logic · Node + `node:sqlite` API · React/Vite PWA · Expo Android ·
    Supabase/PostgreSQL port); offline-first double-entry accounting + farming costing
+7. Integrated Sales, Order, Inventory & Delivery ERP — Next.js 16 / React 19 / Prisma /
+   PostgreSQL 17 / Tailwind 4 (bulk-commodity trading; role-based, rules enforced in code *and* by
+   DB CHECK constraints + append-only audit trigger). Source lives in `D:\sales-erp`.
 
 > The only outbound project link that works for a visitor is the GitHub **profile**
 > (`github.com/mehedihasansajal7-ctrl`) — the repo links themselves 404 because they are private.
