@@ -21,7 +21,12 @@ Sales Operations & MIS professional and builder of business automation systems.
 
 ## Featured projects
 
-**Four of the seven repos are public** and have a *View Code* button on the card:
+Every card has a **View Project** button that opens a **one-page summary on the GitHub profile**
+(`github.com/mehedihasansajal7-ctrl#<project>`) — so a recruiter reads the project name, what it does
+and the stack, instead of landing in a wall of code. Those summaries live in the special
+profile-README repo `mehedihasansajal7-ctrl/mehedihasansajal7-ctrl`.
+
+**Four of the seven repos are public** (inside each summary there is a direct source link):
 
 | Project | Public artifacts |
 |---|---|
