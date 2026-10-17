@@ -21,27 +21,34 @@ Sales Operations & MIS professional and builder of business automation systems.
 
 ## Featured projects
 
-Five are **internal / private systems** (the live apps are behind staff sign-in and the GitHub
-repos are private, so linking them would be a dead end). Two are **publicly reachable** and are the
-only clickable project links on the page.
+**Four of the seven repos are public** and have a *View Code* button on the card:
 
-1. Corporate Zakat Management & Assurance Platform — Next.js / Prisma / PostgreSQL
-2. SFUWT Welfare Application Portal — Flask / SQLite *(live, staff sign-in required)*
-3. SFUWT Control Tower & Field Visit Tracker — Node.js / MSSQL *(live, staff sign-in required)*
-4. **Family Finance** — Android (Kotlin / Jetpack Compose / Firebase) + an installable web PWA →
-   <https://family-finance-98333.web.app/> *(live; sign in with a family ID)*
-5. Transport Management System (TMS) — Next.js 16 / Prisma / PostgreSQL
-6. **Small Business Manager — with a Farming module** — TypeScript npm-workspaces monorepo
-   (`packages/domain` pure logic · Node + `node:sqlite` API · React/Vite PWA · Expo Android ·
-   Supabase/PostgreSQL port); offline-first double-entry accounting + farming costing.
-   Public Android APK releases:
-   <https://github.com/mehedihasansajal7-ctrl/small-business-manager-downloads/releases/latest>
+| Project | Public artifacts |
+|---|---|
+| Family Finance | source `family-finance-app` + live PWA <https://family-finance-98333.web.app/> |
+| Transport Management System | source `tms` |
+| Small Business Manager | source `small-business-manager` + public APK releases <https://github.com/mehedihasansajal7-ctrl/small-business-manager-downloads/releases/latest> |
+| Sales ERP | source `sales-erp` |
+
+The three **SFUWT systems** (`sfuwt-welfare`, `sfuwt-dashboard`, `welfare-dashboard`) and
+`zakat-platform` stay **private**: their source contains a live ERP data-warehouse credential and the
+live apps' default staff passwords, and they are the employer's / trust's systems — so a public link
+would be both a security and an IP problem. Those cards end with an honest note instead.
+
+1. Corporate Zakat Management & Assurance Platform — Next.js / Prisma / PostgreSQL *(private)*
+2. SFUWT Welfare Application Portal — Flask / SQLite *(private; live, staff sign-in)*
+3. SFUWT Control Tower & Field Visit Tracker — Node.js / MSSQL *(private; live, staff sign-in)*
+4. Family Finance — Android (Kotlin / Jetpack Compose / Firebase) + installable web PWA **(public)**
+5. Transport Management System (TMS) — Next.js 16 / Prisma / PostgreSQL **(public)**
+6. Small Business Manager — with a Farming module — TypeScript npm-workspaces monorepo **(public)**
 7. Integrated Sales, Order, Inventory & Delivery ERP — Next.js 16 / React 19 / Prisma /
-   PostgreSQL 17 / Tailwind 4 (bulk-commodity trading; role-based, rules enforced in code *and* by
-   DB CHECK constraints + append-only audit trigger). Source lives in `D:\sales-erp`.
+   PostgreSQL 17 / Tailwind 4 **(public)**. Source lives in `D:\sales-erp`.
 
-> Everything else that works for a visitor is the GitHub **profile**
-> (`github.com/mehedihasansajal7-ctrl`) — individual repo links 404 because those repos are private.
+> Before any of the four were published the git **history** was checked for secrets, and two were
+> cleaned: `family-finance-app` had its real `app/google-services.json` (API key + project id) purged
+> from all history and replaced by a sanitised `app/google-services.example.json`;
+> `small-business-manager` had a dev-only `.local-smoke-data/.session_secret` purged. Pre-purge git
+> bundles were kept in `%TEMP%\opencode\*-pre-purge.bundle`.
 
 ## Rebuilding the offline single-file build
 
