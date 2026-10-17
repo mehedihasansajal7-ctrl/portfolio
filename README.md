@@ -21,24 +21,27 @@ Sales Operations & MIS professional and builder of business automation systems.
 
 ## Featured projects
 
-All seven are **internal / private systems** — the portfolio deliberately shows no public demo
-links (the live apps are behind staff sign-in and the GitHub repos are private, so any link would
-be a dead end for a visitor). It ends with a "Request a walkthrough" CTA instead.
+Five are **internal / private systems** (the live apps are behind staff sign-in and the GitHub
+repos are private, so linking them would be a dead end). Two are **publicly reachable** and are the
+only clickable project links on the page.
 
 1. Corporate Zakat Management & Assurance Platform — Next.js / Prisma / PostgreSQL
 2. SFUWT Welfare Application Portal — Flask / SQLite *(live, staff sign-in required)*
 3. SFUWT Control Tower & Field Visit Tracker — Node.js / MSSQL *(live, staff sign-in required)*
-4. Family Finance — Android (Kotlin / Jetpack Compose / Firebase)
+4. **Family Finance** — Android (Kotlin / Jetpack Compose / Firebase) + an installable web PWA →
+   <https://family-finance-98333.web.app/> *(live; sign in with a family ID)*
 5. Transport Management System (TMS) — Next.js 16 / Prisma / PostgreSQL
-6. Small Business Manager — with a Farming module — TypeScript npm-workspaces monorepo
+6. **Small Business Manager — with a Farming module** — TypeScript npm-workspaces monorepo
    (`packages/domain` pure logic · Node + `node:sqlite` API · React/Vite PWA · Expo Android ·
-   Supabase/PostgreSQL port); offline-first double-entry accounting + farming costing
+   Supabase/PostgreSQL port); offline-first double-entry accounting + farming costing.
+   Public Android APK releases:
+   <https://github.com/mehedihasansajal7-ctrl/small-business-manager-downloads/releases/latest>
 7. Integrated Sales, Order, Inventory & Delivery ERP — Next.js 16 / React 19 / Prisma /
    PostgreSQL 17 / Tailwind 4 (bulk-commodity trading; role-based, rules enforced in code *and* by
    DB CHECK constraints + append-only audit trigger). Source lives in `D:\sales-erp`.
 
-> The only outbound project link that works for a visitor is the GitHub **profile**
-> (`github.com/mehedihasansajal7-ctrl`) — the repo links themselves 404 because they are private.
+> Everything else that works for a visitor is the GitHub **profile**
+> (`github.com/mehedihasansajal7-ctrl`) — individual repo links 404 because those repos are private.
 
 ## Rebuilding the offline single-file build
 
