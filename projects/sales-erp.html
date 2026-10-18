@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrated Sales, Order, Inventory & Delivery ERP &mdash; Mehedi Hasan Sajal</title>
+<meta name="description" content="Bulk-commodity trading · Five roles, one database - Integrated Sales, Order, Inventory &amp; Delivery ERP by Mehedi Hasan Sajal">
+<meta name="theme-color" content="#4F46E5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234F46E5'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EMS%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/detail.css">
+<script>
+  try {
+    var t = localStorage.getItem('theme');
+    if (t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  } catch (e) { }
+</script>
+<style>
+  .sun{display:none}.moon{display:block}
+  html.dark .sun{display:block} html.dark .moon{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <a class="back" href="../">&larr; Back to portfolio</a>
+    <button class="toggle" id="theme-toggle" aria-label="Toggle dark mode"><svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+
+  <header class="hero">
+    <div class="head">
+      <div class="icon" aria-hidden="true"><span style="font-weight:800;font-size:15px;letter-spacing:.02em">ERP</span></div>
+      <span class="badge">ERP &middot; Trading</span>
+    </div>
+    <h1>Integrated Sales, Order, Inventory &amp; Delivery ERP</h1>
+    <p class="sub">Bulk-commodity trading &middot; Five roles, one database</p>
+    <div class="chips"><span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Prisma</span><span class="chip">PostgreSQL 17</span><span class="chip">Tailwind 4</span><span class="chip">Recharts</span><span class="chip">Zod</span><span class="chip">Docker</span></div>
+  </header>
+
+  <section class="card">
+    <h2>About this project</h2>
+    <p>An ERP for a bulk-commodity trading business &mdash; fertilizer, coal, grain. Quantities are in <strong>MT</strong>, money in <strong>BDT</strong>, and every date boundary is evaluated in Asia/Dhaka.</p><p>Five job functions plus an admin work on one database: Finance publishes rates, Sales creates orders, Sales Ops approves and raises delivery orders, Warehouse dispatches, Management reads. The rules are enforced in the code and in the database itself, so they cannot be bypassed from the UI, from the API or from raw SQL.</p>
+  </section>
+
+  <section class="card">
+    <h2>What it does</h2>
+    <ul><li>Finance's rate is copied into the order and locked permanently &mdash; a later rate change can never rewrite an old order.</li><li>Strict per-customer delivery priority across products, enforced when a delivery order is created and again at dispatch, inside a row-locked transaction.</li><li>Over-allocation and over-dispatch are rejected by CHECK constraints as well as by the service layer.</li><li>Unique challan numbers, an immutable stock ledger plus a balance table updated in the same transaction.</li><li>Append-only audit log: a database trigger rejects UPDATE, DELETE and TRUNCATE.</li><li>Twelve reports with Excel / PDF / CSV export, plus printables for the order confirmation, delivery order and dispatch challan.</li></ul>
+  </section>
+
+  <section class="card">
+    <h2>Links</h2>
+    <div class="actions"><a class="btn primary" href="https://github.com/mehedihasansajal7-ctrl/sales-erp" target="_blank" rel="noopener noreferrer">GitHub &mdash; source</a></div>
+    
+  </section>
+
+  <nav class="nav"><a href="small-business-manager.html"><span class="lbl">&larr; Previous</span><span class="nm">Small Business Manager &mdash; with a Farming module</span></a><span></span></nav>
+
+  <p class="foot">&copy; 2026 Mehedi Hasan Sajal &middot; <a href="../">portfolio</a></p>
+</div>
+
+<script>
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    var dark = document.documentElement.classList.toggle('dark');
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) { }
+  });
+</script>
+</body>
+</html>

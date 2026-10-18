@@ -16,9 +16,30 @@ over `index.html`.)
 > The repo has to stay **public** for GitHub Pages on the free plan. Before it was made public the
 > whole git history was scanned: no tokens, API keys, ERP hosts or `.env` values (20 commits, clean).
 
+### One page per project
+
+Every card's **View Project** button opens that project's own page under `projects/`:
+
+| Project | Page |
+|---|---|
+| Zakat Management | `projects/zakat-management.html` |
+| SFUWT Welfare Portal | `projects/sfuwt-welfare-portal.html` |
+| SFUWT Control Tower | `projects/sfuwt-control-tower.html` |
+| Family Finance | `projects/family-finance.html` |
+| Transport Management System | `projects/transport-management-system.html` |
+| Small Business Manager | `projects/small-business-manager.html` |
+| Sales ERP | `projects/sales-erp.html` |
+
+Each page has: what the project is, what it does (bullet list), the stack, its links (source / live
+app / APK — only where public), a "back to portfolio" link and previous/next navigation. The pages
+share `assets/detail.css` + `assets/inter.woff2`, so they stay ~5 KB each and still need no CDN.
+They are generated from the data in the build script; project screenshots are deliberately **not**
+included (the available ones contain real applicant data).
+
 - `index.html` — the served, self-contained build (**edit `index.src.html` instead**).
 - `index.src.html` — the editable source (Tailwind CDN + Lucide icons, light/dark theme,
   scroll-reveal, responsive nav). No build step.
+- `projects/` + `assets/` — the per-project pages and their shared CSS/font.
 - `mehedi-hasan-sajal.jpeg` — professional headshot (hero).
 - `Mehedi-Hasan-Sajal-CV.pdf` — downloadable CV used by the "Download CV" buttons.
 - `Mehedi-Hasan-Sajal-Portfolio.html` — **single-file, fully offline shareable build** (~377 KB).
