@@ -92,27 +92,21 @@ would be both a security and an IP problem. Those cards end with an honest note 
 
 ## Rebuilding the offline single-file build
 
-`Mehedi-Hasan-Sajal-Portfolio.html` is a generated artifact. After any edit to `index.html`
-(especially if you add **new Tailwind classes or new icons**) rebuild it:
+`Mehedi-Hasan-Sajal-Portfolio.html` is a generated artifact — edit `index.html`, then:
 
-1. **Embed the font** — fetch `https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap`
-   with a Chrome User-Agent, keep the **`latin`** `@font-face` only (it covers every non-ASCII char
-   used here; `latin-ext` covers none), download its `.woff2` and inline it as
-   `src:url(data:font/woff2;base64,…)` — replacing the three Google-Fonts `<link>` tags.
-2. **Bake the icons** — for every `<i data-lucide="NAME" class="CLASSES"></i>`, fetch
-   `https://unpkg.com/lucide-static@latest/icons/NAME.svg` and replace the tag with an inline
-   `<svg class="CLASSES" …>`. The theme toggle becomes **two** SVGs (moon `block dark:hidden`,
-   sun `hidden dark:block`) and the theme JS loses its `lucide.createIcons()` calls.
-3. **Inline Tailwind** — load the intermediate file in a browser with the Play CDN still present,
-   read the injected `<style>` whose text starts with `*,`, and save it. (This is why a *new*
-   Tailwind class needs a rebuild: the CDN only generates the classes it sees.)
-4. **Finalise** — replace `<script src="https://cdn.tailwindcss.com">` with that CSS inside a
-   `<style>` at the end of `<head>`; delete the Tailwind/lucide `<script>` tags and the
-   `tailwind.config` block (it needs the CDN global); then base64-inline
-   `src="mehedi-hasan-sajal.jpeg"` and both `href="Mehedi-Hasan-Sajal-CV.pdf"`.
-5. **Verify** — the page must report `performance.getEntriesByType('resource')` with **0** external
-   requests, `document.fonts.check('16px Inter') === true`, the photo loading, the dark-mode toggle
-   working and the CV downloading as `Mehedi-Hasan-Sajal-CV.pdf`.
+```bash
+cd portfolio
+python build.py
+```
+
+`build.py` embeds the Inter font (latin subset), bakes every Lucide icon into inline SVG, inlines
+`assets/tailwind.css`, drops the CDN `<script>` tags and base64-embeds the photo and the CV. Then copy
+the result into the repo as `index.html` (served by Pages) and keep `index.html` as `index.src.html`.
+
+⚠️ `assets/tailwind.css` is a **snapshot** of the generated utility classes. If you use a **new**
+Tailwind class in `index.html`, regenerate it first: render the page in a browser with the Play CDN
+and copy the injected `<style>` whose text starts with `*, ` over `assets/tailwind.css`. Otherwise
+that class simply has no CSS in the built file.
 
 ⚠️ Do all file reads/writes in **Python with `encoding="utf-8"`**. PowerShell's `Get-Content` /
 `Out-File` (and `git show | Out-File`) decode bytes with the console code page and will corrupt
