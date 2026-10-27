@@ -30,11 +30,11 @@ Every card's **View Project** button opens that project's own page under `projec
 | Small Business Manager | `projects/small-business-manager.html` |
 | Sales ERP | `projects/sales-erp.html` |
 
-Each page has: what the project is, what it does (bullet list), the stack, its links (source / live
-app / APK — only where public), a "back to portfolio" link and previous/next navigation. The pages
+Each page has: what the project is, what it does (bullet list), the stack, one action button and
+previous/next navigation. **No page links to source code** — the recruiter reads the summary and, if
+they want more, uses "Ask for a walkthrough" (or the live app / APK where one exists). The pages
 share `assets/detail.css` + `assets/inter.woff2`, so they stay ~5 KB each and still need no CDN.
-They are generated from the data in the build script; project screenshots are deliberately **not**
-included (the available ones contain real applicant data).
+Project screenshots are deliberately **not** included (the available ones contain real applicant data).
 
 - `index.html` — the served, self-contained build (**edit `index.src.html` instead**).
 - `index.src.html` — the editable source (Tailwind CDN + Lucide icons, light/dark theme,
