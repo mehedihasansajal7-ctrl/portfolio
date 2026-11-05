@@ -35,6 +35,29 @@
   }
 
   /* ---------- header ---------- */
+  .cv-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8mm;
+  }
+
+  .cv-head-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .photo {
+    flex: 0 0 auto;
+    width: 25mm;
+    height: 32mm;
+    object-fit: cover;
+    object-position: center 12%;
+    border-radius: 2.5mm;
+    border: 0.6pt solid #E2E8F0;
+    background: #F5F7FA;
+  }
+
   .name {
     font-size: 23pt;
     font-weight: 800;
@@ -213,17 +236,22 @@
 </head>
 <body>
 
-  <h1 class="name">Mehedi Hasan Sajal</h1>
-  <p class="role">Senior Officer — Sales Operation (MIS) · Akij Resources</p>
-  <p class="contact">
-    <span>mehedihasansajal7@gmail.com</span><span class="sep">|</span>
-    <span>+880 1729 999675</span><span class="sep">|</span>
-    <span>Nikunja-2, Khilkhet, Dhaka</span>
-  </p>
-  <p class="contact">
-    <span><a href="https://github.com/mehedihasansajal7-ctrl">github.com/mehedihasansajal7-ctrl</a></span><span class="sep">|</span>
-    <span><a href="https://mehedihasansajal7-ctrl.github.io/portfolio/">mehedihasansajal7-ctrl.github.io/portfolio</a></span>
-  </p>
+  <header class="cv-head">
+    <div class="cv-head-text">
+      <h1 class="name">Mehedi Hasan Sajal</h1>
+      <p class="role">Senior Officer — Sales Operation (MIS) · Akij Resources</p>
+      <p class="contact">
+        <span>mehedihasansajal7@gmail.com</span><span class="sep">|</span>
+        <span>+880 1729 999675</span><span class="sep">|</span>
+        <span>Nikunja-2, Khilkhet, Dhaka</span>
+      </p>
+      <p class="contact">
+        <span><a href="https://github.com/mehedihasansajal7-ctrl">github.com/mehedihasansajal7-ctrl</a></span><span class="sep">|</span>
+        <span><a href="https://mehedihasansajal7-ctrl.github.io/portfolio/">mehedihasansajal7-ctrl.github.io/portfolio</a></span>
+      </p>
+    </div>
+    <img class="photo" src="mehedi-hasan-sajal.jpeg" alt="Mehedi Hasan Sajal">
+  </header>
   <div class="rule"></div>
 
   <h2>Profile</h2>
