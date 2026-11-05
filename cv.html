@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mehedi Hasan Sajal — Senior Officer, Sales Operation (MIS)</title>
+<style>
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url(assets/inter.woff2) format('woff2');
+  }
+
+  @page {
+    size: A4;
+    margin: 13mm 14mm 12mm 14mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.42;
+    color: #334155;
+    background: #fff;
+  }
+
+  /* ---------- header ---------- */
+  .name {
+    font-size: 23pt;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .role {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #4F46E5;
+    margin: 3pt 0 0;
+  }
+
+  .contact {
+    margin: 6pt 0 0;
+    font-size: 8.6pt;
+    color: #64748B;
+  }
+
+  .contact span { white-space: nowrap; }
+  .contact .sep { color: #CBD5E1; padding: 0 4pt; }
+  .contact a { color: inherit; text-decoration: none; }
+
+  .rule {
+    height: 2.5pt;
+    background: linear-gradient(90deg, #4F46E5, #0EA5A4);
+    margin: 7pt 0 0;
+    border-radius: 2pt;
+  }
+
+  /* ---------- sections ---------- */
+  h2 {
+    font-size: 8.4pt;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    color: #4F46E5;
+    font-weight: 800;
+    margin: 11pt 0 5pt;
+    padding-bottom: 2.5pt;
+    border-bottom: 0.75pt solid #E2E8F0;
+    page-break-after: avoid;
+  }
+
+  p { margin: 0 0 4pt; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---------- experience ---------- */
+  .job { margin: 0 0 7pt; page-break-inside: avoid; }
+  .job:last-child { margin-bottom: 0; }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10pt;
+  }
+
+  .job-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .job-co {
+    font-size: 9.4pt;
+    font-weight: 600;
+    color: #4F46E5;
+  }
+
+  .job-date {
+    font-size: 8.4pt;
+    color: #64748B;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+
+  ul {
+    margin: 2.5pt 0 0;
+    padding-left: 11pt;
+  }
+
+  li {
+    margin: 0 0 1.6pt;
+    font-size: 9.3pt;
+  }
+
+  li::marker { color: #0EA5A4; }
+
+  /* ---------- projects ---------- */
+  .proj { margin: 0 0 4.5pt; page-break-inside: avoid; }
+  .proj:last-child { margin-bottom: 0; }
+
+  .proj-title {
+    font-weight: 700;
+    color: #0F172A;
+    font-size: 9.5pt;
+  }
+
+  .proj-line { color: #475569; font-size: 9.2pt; }
+
+  .tech {
+    color: #64748B;
+    font-size: 8.3pt;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 7.2pt;
+    font-weight: 700;
+    color: #0F766E;
+    background: #F0FDFA;
+    border: 0.5pt solid #CCFBF1;
+    border-radius: 2pt;
+    padding: 0.5pt 3pt;
+    margin-left: 3pt;
+    vertical-align: 1pt;
+  }
+
+  /* ---------- skills ---------- */
+  .skill-row {
+    display: flex;
+    gap: 8pt;
+    margin: 0 0 3pt;
+    page-break-inside: avoid;
+  }
+
+  .skill-label {
+    flex: 0 0 88pt;
+    font-weight: 700;
+    color: #0F172A;
+    font-size: 9pt;
+  }
+
+  .skill-val { flex: 1; font-size: 9.2pt; }
+
+  /* ---------- education / certs ---------- */
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10pt;
+    margin: 0 0 3pt;
+    page-break-inside: avoid;
+  }
+
+  .edu-left b { color: #0F172A; font-weight: 700; font-size: 9.5pt; }
+  .edu-left span { color: #475569; }
+  .edu-right { font-size: 8.6pt; color: #64748B; white-space: nowrap; }
+
+  .certs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12pt;
+    row-gap: 2.5pt;
+  }
+
+  .cert b { color: #0F172A; font-weight: 600; font-size: 9.1pt; }
+  .cert span { color: #64748B; font-size: 8.4pt; }
+
+  .muted { color: #64748B; }
+  .small { font-size: 8.6pt; }
+
+  .footer {
+    margin-top: 10pt;
+    padding-top: 4pt;
+    border-top: 0.75pt solid #E2E8F0;
+    font-size: 8pt;
+    color: #94A3B8;
+    display: flex;
+    justify-content: space-between;
+    gap: 10pt;
+  }
+</style>
+</head>
+<body>
+
+  <h1 class="name">Mehedi Hasan Sajal</h1>
+  <p class="role">Senior Officer — Sales Operation (MIS) · Akij Resources</p>
+  <p class="contact">
+    <span>mehedihasansajal7@gmail.com</span><span class="sep">|</span>
+    <span>+880 1729 999675</span><span class="sep">|</span>
+    <span>Nikunja-2, Khilkhet, Dhaka</span>
+  </p>
+  <p class="contact">
+    <span><a href="https://github.com/mehedihasansajal7-ctrl">github.com/mehedihasansajal7-ctrl</a></span><span class="sep">|</span>
+    <span><a href="https://mehedihasansajal7-ctrl.github.io/portfolio/">mehedihasansajal7-ctrl.github.io/portfolio</a></span>
+  </p>
+  <div class="rule"></div>
+
+  <h2>Profile</h2>
+  <p>
+    Sales Operations and MIS professional with 5+ years in FMCG sales operations, reporting and
+    analytics. I turn manual, spreadsheet-heavy processes into reliable, audit-ready systems — and I
+    build those systems myself, using AI as my engineering team. Comfortable owning daily order and
+    delivery control, management reporting, and the automation that sits behind them.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <div>
+        <span class="job-title">Senior Officer — Sales Operation (MIS)</span><br>
+        <span class="job-co">Akij Resources</span>
+      </div>
+      <span class="job-date">Jul 2023 – Present</span>
+    </div>
+    <ul>
+      <li>Work in a 7-member MIS team driving sales targets; collect and review progress data from 12 salespeople.</li>
+      <li>Research past data to forecast future sales growth and prepare daily, monthly and yearly sales,
+        order and management reports.</li>
+      <li>Create an average of 20 sales orders daily and oversee about 18 daily delivery movements across
+        the country from 5 distribution points.</li>
+      <li>Maintain key customer relationships to ensure timely credit recovery.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div>
+        <span class="job-title">Sales Admin</span><br>
+        <span class="job-co">Stalwart Associates</span>
+      </div>
+      <span class="job-date">Feb 2021 – Jun 2023</span>
+    </div>
+    <ul>
+      <li>Prepared and monitored monthly training schedules for around 15 SR and TSO, and trained 100+ sales
+        force members to improve efficiency and sales growth.</li>
+      <li>Arranged 5+ major events and over 50 regular events and field marketing activations; visited dealer
+        points and ran motivational sessions to increase revenue.</li>
+      <li>Oversaw TA/DA and billing, credit recovery, stock and online payment confirmation.</li>
+      <li>Prepared daily, monthly and yearly sales and collection reports and analysed data for management.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div>
+        <span class="job-title">Sales Executive — MFS</span><br>
+        <span class="job-co">SouthEast Bank Ltd.</span>
+      </div>
+      <span class="job-date">Jan 2019 – Jul 2019</span>
+    </div>
+    <ul>
+      <li>Worked in a 5-member team to grow Telecash, the bank's mobile financial service.</li>
+      <li>Onboarded 4 education institutions and a garments factory for regular transactions and salary
+        disbursement, and opened around 600 new accounts.</li>
+      <li>Maintained key customer relationships with prompt support for smooth transactions.</li>
+    </ul>
+  </div>
+
+  <h2>Selected Projects</h2>
+
+  <div class="proj">
+    <span class="proj-title">Integrated Sales, Order, Inventory &amp; Delivery ERP</span>
+    <span class="tag">Open source</span><br>
+    <span class="proj-line">ERP for a bulk-commodity trading business: locked rates, per-customer delivery
+      priority, immutable stock ledger and an append-only audit log.</span><br>
+    <span class="tech">Next.js 16 · React 19 · TypeScript · Prisma · PostgreSQL 17 · Tailwind 4</span>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">Small Business Manager — with a Farming module</span>
+    <span class="tag">Open source · APK</span><br>
+    <span class="proj-line">Offline-first business and farm management for 2–5 partners: POS, payables,
+      double-entry journal, farming cycle costing and a bilingual AI assistant.</span><br>
+    <span class="tech">TypeScript · Node.js · SQLite · React/Vite PWA · Expo Android · Supabase</span>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">Family Finance</span>
+    <span class="tag">Open source · Live</span><br>
+    <span class="proj-line">Privacy-first family finance manager where each member's ledger is enforced
+      private in the database, with a shared aggregate family dashboard.</span><br>
+    <span class="tech">Kotlin · Jetpack Compose · Firebase Firestore · Web PWA</span>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">Corporate Zakat Management &amp; Assurance Platform</span><br>
+    <span class="proj-line">Continuous, rule-driven zakat computation with full lineage from transaction to
+      payment and an audit-ready control tower.</span><br>
+    <span class="tech">Next.js · Prisma · PostgreSQL</span>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">SFUWT Welfare Application Portal</span><br>
+    <span class="proj-line">Public welfare application portal: guided multi-category wizard, document
+      validation, server-enforced approvals and printable Bengali forms.</span><br>
+    <span class="tech">Python · Flask · SQLite · PyMuPDF</span>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">Transport Management System</span>
+    <span class="tag">Open source</span><br>
+    <span class="proj-line">Role-based corporate transport covering request → approval → assignment → trip,
+      with conflict detection and a driver availability state machine.</span><br>
+    <span class="tech">Next.js 16 · TypeScript · Prisma · PostgreSQL</span>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">SFUWT Control Tower &amp; Field Visit Tracker</span><br>
+    <span class="proj-line">Dashboard fed live from the ERP warehouse, plus a GPS-verified field-visit
+      tracker with photo evidence, approvals and an audit trail.</span><br>
+    <span class="tech">Node.js · MSSQL · Docker</span>
+  </div>
+
+  <h2>Skills</h2>
+
+  <div class="skill-row">
+    <div class="skill-label">Operations</div>
+    <div class="skill-val">Sales operations &amp; administration · Field force &amp; distributor management ·
+      Delivery management · Order &amp; inventory control · Sales strategy, budgeting and target setting</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">Analytics &amp; MIS</div>
+    <div class="skill-val">Management reporting (daily / monthly / yearly) · Sales forecasting · Territory and
+      product-wise analysis · Business and data analysis</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">Tools</div>
+    <div class="skill-val">Advanced MS Excel (formulas &amp; VBA) · Power BI dashboards · Google Sheets &amp;
+      Apps Script · MS Word / PowerPoint</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">Build &amp; automate</div>
+    <div class="skill-val">AI-assisted development · Python / Flask · Node.js · SQL (PostgreSQL, SQLite,
+      MSSQL) · HTML · CSS · Tailwind</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">People</div>
+    <div class="skill-val">Team leadership · Training &amp; development · Business negotiation ·
+      Cross-functional collaboration</div>
+  </div>
+
+  <h2>Education</h2>
+
+  <div class="edu-row">
+    <div class="edu-left"><b>M.Sc. in Botany</b> <span>— National University</span></div>
+    <div class="edu-right">CGPA 2.70 / 4.00 · 2021</div>
+  </div>
+  <div class="edu-row">
+    <div class="edu-left"><b>B.Sc. in Botany</b> <span>— National University</span></div>
+    <div class="edu-right">CGPA 2.85 / 4.00 · 2017</div>
+  </div>
+  <div class="edu-row">
+    <div class="edu-left"><b>HSC (Science)</b> <span>— Naogaon Govt. College</span></div>
+    <div class="edu-right">GPA 4.00 / 5.00 · 2013</div>
+  </div>
+  <div class="edu-row">
+    <div class="edu-left"><b>SSC (Science)</b> <span>— Daxmin Mainum High School, Naogaon</span></div>
+    <div class="edu-right">GPA 5.00 / 5.00 · 2011</div>
+  </div>
+
+  <h2>Certifications &amp; Training</h2>
+
+  <div class="certs">
+    <div class="cert"><b>Six Sigma White &amp; Yellow Belt</b><br><span>Akij Resources Ltd. · 2024</span></div>
+    <div class="cert"><b>Advanced MS Excel</b><br><span>Skillful Bangladesh · 2023</span></div>
+    <div class="cert"><b>Data Analysis using Microsoft Excel</b><br><span>Coursera · 2022</span></div>
+    <div class="cert"><b>Power BI Dashboard Preparation</b><br><span>L&amp;G Akij Resource</span></div>
+    <div class="cert"><b>Information Security 2021</b><br><span>TÜV SÜD Academy</span></div>
+    <div class="cert"><b>Code of Ethics 2021 (Compliance)</b><br><span>TÜV SÜD Academy</span></div>
+  </div>
+
+  <h2>Additional</h2>
+  <p class="small">
+    <b>Languages:</b> Bengali (native) · English (fluent) · Hindi (basic)<br>
+    <b>Nationality:</b> Bangladeshi &nbsp;·&nbsp; <b>Date of Birth:</b> 1 September 1995<br>
+    <b>Volunteering:</b> Founder, Blood Donation Club (PROBAL), Naogaon Govt. College
+  </p>
+
+  <div class="footer">
+    <span>References available on request.</span>
+    <span>Portfolio: mehedihasansajal7-ctrl.github.io/portfolio</span>
+  </div>
+
+</body>
+</html>

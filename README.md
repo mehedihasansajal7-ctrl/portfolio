@@ -42,6 +42,10 @@ Project screenshots are deliberately **not** included (the available ones contai
 - `projects/` + `assets/` — the per-project pages and their shared CSS/font.
 - `mehedi-hasan-sajal.jpeg` — professional headshot (hero).
 - `Mehedi-Hasan-Sajal-CV.pdf` — downloadable CV used by the "Download CV" buttons.
+- `cv.html` — the CV's source (A4 print CSS, same design tokens). Regenerate the PDF with:
+  `chrome --headless=new --no-pdf-header-footer --print-to-pdf=Mehedi-Hasan-Sajal-CV.pdf cv.html`
+  (serve the folder first so `assets/inter.woff2` loads), then re-run `python build.py` so the new
+  PDF is embedded in the single-file build.
 - `Mehedi-Hasan-Sajal-Portfolio.html` — **single-file, fully offline shareable build** (~377 KB).
   Everything is embedded, so it renders with **zero network access**: the Inter font (variable
   woff2, latin subset, base64 `@font-face`), the Tailwind CSS (generated at build time and inlined),
