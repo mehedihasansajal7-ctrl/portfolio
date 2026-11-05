@@ -87,6 +87,14 @@ html = html.replace('href="Mehedi-Hasan-Sajal-CV.pdf"', 'href="data:application/
 
 out = ROOT / "Mehedi-Hasan-Sajal-Portfolio.html"
 out.write_text(html, encoding="utf-8")
+
+# A slimmer variant for GitHub Pages: identical, except the CV stays a same-origin file link
+# instead of a ~600 KB base64 blob, so the served page is ~0.4 MB and the CV downloads on click.
+hosted = html.replace('href="data:application/pdf;base64,' + base64.b64encode(pdf).decode("ascii") + '"',
+                      'href="Mehedi-Hasan-Sajal-CV.pdf"')
+(ROOT / "index.hosted.html").write_text(hosted, encoding="utf-8")
+
 print("icons baked        :", n, "| leftover <i>:", len(re.findall(r'<i data-lucide', html)))
-print("output             :", out.name, out.stat().st_size, "bytes")
+print("offline build      :", out.name, out.stat().st_size, "bytes  (CV embedded)")
+print("hosted build       : index.hosted.html", (ROOT / "index.hosted.html").stat().st_size, "bytes  (CV linked)")
 print("external script/link:", len(re.findall(r'<script[^>]*\bsrc=', html)), "/", len(re.findall(r'<link[^>]*\bhref="https?', html)))
