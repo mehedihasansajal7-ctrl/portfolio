@@ -5,13 +5,15 @@ Sales Operations & MIS professional and builder of business automation systems.
 
 ## 🌐 Live site
 
-**https://mehedihasansajal7-ctrl.github.io/portfolio/**
+**https://mehedihasansajal7-ctrl.github.io/portfolio/** *(GitHub Pages)*
+**https://mehedi-portfolio.mehedihasansajal7.workers.dev/** *(Cloudflare — see `DEPLOY-CLOUDFLARE.md`)*
 
-Hosted on **GitHub Pages** from this repo (`main` branch, `/` root). The served `index.html` is the
-**fully self-contained build** — fonts, Tailwind CSS, all icons, the photo and the CV are embedded —
-so the live page makes **zero external requests** and cannot break because a CDN or Google Fonts is
-blocked. (`index.src.html` is the editable source; after editing it, rebuild and copy the result
-over `index.html`.)
+Both hosts serve the same content. The repo has to stay **public** for GitHub Pages on the free
+plan (its full history was secret-scanned before going public). The served `index.html` is the
+**fully self-contained build** — fonts, Tailwind CSS, all icons, the photo and the CV are
+embedded — so the live page makes **zero external requests** and cannot break because a CDN or
+Google Fonts is blocked. (`index.src.html` is the editable source; after editing it, rebuild and
+copy the result over `index.html`.)
 
 > The repo has to stay **public** for GitHub Pages on the free plan. Before it was made public the
 > whole git history was scanned: no tokens, API keys, ERP hosts or `.env` values (20 commits, clean).
