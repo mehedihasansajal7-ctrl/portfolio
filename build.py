@@ -88,10 +88,12 @@ html = html.replace('href="Mehedi-Hasan-Sajal-CV.pdf"', 'href="data:application/
 out = ROOT / "Mehedi-Hasan-Sajal-Portfolio.html"
 out.write_text(html, encoding="utf-8")
 
-# A slimmer variant for GitHub Pages: identical, except the CV stays a same-origin file link
-# instead of a ~600 KB base64 blob, so the served page is ~0.4 MB and the CV downloads on click.
+# A slimmer variant for GitHub Pages / Cloudflare Pages: identical, except
+#  * the CV stays a same-origin file link instead of a ~600 KB base64 blob
+#  * project links become relative, so the site works on any host (not just github.io)
 hosted = html.replace('href="data:application/pdf;base64,' + base64.b64encode(pdf).decode("ascii") + '"',
                       'href="Mehedi-Hasan-Sajal-CV.pdf"')
+hosted = hosted.replace("https://mehedihasansajal7-ctrl.github.io/portfolio/projects/", "projects/")
 (ROOT / "index.hosted.html").write_text(hosted, encoding="utf-8")
 
 print("icons baked        :", n, "| leftover <i>:", len(re.findall(r'<i data-lucide', html)))
