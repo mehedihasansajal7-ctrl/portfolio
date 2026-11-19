@@ -8,13 +8,23 @@
     content="Portfolio of Mehedi Hasan Sajal — Sales Operations &amp; MIS professional with 5+ years in FMCG sales operations, reporting and analytics. A non-technical business professional who builds real systems with AI (Zakat Management, SFUWT Welfare Portal, Control Tower, Family Finance, TMS).">
   <meta name="theme-color" content="#4F46E5">
 
-  <!-- Social sharing -->
+  <!-- Social sharing (absolute URLs - required by LinkedIn / WhatsApp / X previews) -->
+  <link rel="canonical" href="https://mehedi-portfolio.mehedihasansajal7.workers.dev/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mehedi Hasan Sajal — Sales Operations &amp; MIS">
+  <meta property="og:site_name" content="Mehedi Hasan Sajal">
+  <meta property="og:url" content="https://mehedi-portfolio.mehedihasansajal7.workers.dev/">
+  <meta property="og:title" content="Mehedi Hasan Sajal — Senior Officer, Sales Operation (MIS)">
   <meta property="og:description"
-    content="5+ years in FMCG sales operations, reporting &amp; analytics — building real systems with AI, not a coding degree.">
-  <meta property="og:image" content="mehedi-hasan-sajal.jpeg">
+    content="Sales Operations &amp; MIS professional with 5+ years in FMCG. I build real business systems with AI — 7 platforms shipped: Zakat, welfare, finance, transport and ERP.">
+  <meta property="og:image" content="https://mehedi-portfolio.mehedihasansajal7.workers.dev/social-card.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mehedi Hasan Sajal — Senior Officer, Sales Operation (MIS)">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mehedi Hasan Sajal — Senior Officer, Sales Operation (MIS)">
+  <meta name="twitter:description" content="Sales Operations &amp; MIS professional with 5+ years in FMCG. 7 platforms shipped, built with AI.">
+  <meta name="twitter:image" content="https://mehedi-portfolio.mehedihasansajal7.workers.dev/social-card.png">
 
   <!-- Enables the scroll-reveal animation only when JS is available -->
   <script>document.documentElement.classList.add('js');</script>
@@ -79,6 +89,38 @@
 
     body {
       transition: background-color .3s ease, color .3s ease;
+    }
+
+
+    /* --- keyboard accessibility --- */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #4F46E5;
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    html.dark a:focus-visible,
+    html.dark button:focus-visible {
+      outline-color: #A5B4FC;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      z-index: 100;
+      background: #4F46E5;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: top .15s ease;
+    }
+
+    .skip-link:focus {
+      top: 12px;
     }
 
     /* --- never let the layout run wider than the viewport --- */
@@ -154,6 +196,7 @@
 </head>
 
 <body class="font-inter text-body bg-bg antialiased">
+  <a href="#home" class="skip-link">Skip to content</a>
   <!-- Navigation -->
   <nav class="fixed top-0 w-full bg-surface/90 backdrop-blur-md border-b border-line z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
